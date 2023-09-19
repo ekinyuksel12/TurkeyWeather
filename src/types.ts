@@ -107,70 +107,276 @@ interface Tahmin {
 //Converted types
 export type CentersResponse = CastedCenterInfo[]
 
+/**
+ * Represents a casted daily weather forecast with detailed information.
+ *
+ * @interface
+ */
 export interface CastedDailyForecast {
-    date: string
-    event: string
+    /**
+     * The date of the weather forecast.
+     *
+     * @type {string}
+     */
+    date: string;
+
+    /**
+     * The weather event description.
+     *
+     * @type {string}
+     */
+    event: string;
+
+    /**
+     * Temperature information, including the lowest and highest temperatures.
+     *
+     * @type {{ lowest: number; highest: number }}
+     */
     temp: {
-        lowest: number
-        highest: number
-    }
+        lowest: number;
+        highest: number;
+    };
+
+    /**
+     * Humidity information, including the lowest and highest humidity levels.
+     *
+     * @type {{ lowest: number; highest: number }}
+     */
     humidity: {
-        lowest: number
-        highest: number
-    }
+        lowest: number;
+        highest: number;
+    };
+
+    /**
+     * Wind information, including speed and direction.
+     *
+     * @type {{
+     *     speed: number;
+     *     direction: number;
+     * }}
+     */
     wind: {
-        speed: number
-        direction: number
-    }
+        speed: number;
+        direction: number;
+    };
 }
 
-interface CastedHourlyForecast {
-    date: string
-    event: string
-    temp: number
-    apparentTemp: number
-    humidity: number
+/**
+ * Represents a casted hourly weather forecast with detailed information.
+ *
+ * @interface
+ */
+export interface CastedHourlyForecast {
+    /**
+     * The date and time of the weather forecast.
+     *
+     * @type {string}
+     */
+    date: string;
+
+    /**
+     * The weather event description.
+     *
+     * @type {string}
+     */
+    event: string;
+
+    /**
+     * The temperature for the forecasted hour.
+     *
+     * @type {number}
+     */
+    temp: number;
+
+    /**
+     * The apparent temperature (what it feels like) for the forecasted hour.
+     *
+     * @type {number}
+     */
+    apparentTemp: number;
+
+    /**
+     * The humidity level for the forecasted hour.
+     *
+     * @type {number}
+     */
+    humidity: number;
+
+    /**
+     * Wind information, including speed, maximum speed, and direction.
+     *
+     * @type {{
+     *     speed: number;
+     *     maxSpeed: number;
+     *     direction: number;
+     * }}
+     */
     wind: {
-        speed: number
-        maxSpeed: number
-        direction: number
-    }
+        speed: number;
+        maxSpeed: number;
+        direction: number;
+    };
 }
 
+/**
+ * Represents the response data for the latest weather events with casted types.
+ *
+ * @interface
+ */
 export interface CastedLatestEvents {
-    temp: number
-    dataDate: string
-    eventCode: string
-    humidity: number
-    pressure: number | undefined
+    /**
+     * The temperature at the time of the latest events.
+     *
+     * @type {number}
+     */
+    temp: number;
+
+    /**
+     * The date and time when the weather data was recorded.
+     *
+     * @type {string}
+     */
+    dataDate: string;
+
+    /**
+     * The event code representing the weather conditions.
+     *
+     * @type {string}
+     */
+    eventCode: string;
+
+    /**
+     * The humidity level at the time of the latest events.
+     *
+     * @type {number}
+     */
+    humidity: number;
+
+    /**
+     * The atmospheric pressure (if available) at the time of the latest events.
+     *
+     * @type {number | undefined}
+     */
+    pressure: number | undefined;
+
+    /**
+     * Precipitation information, including precipitation amounts at different time intervals.
+     *
+     * @type {{
+     *     now: number;
+     *     after10Minutes: number;
+     *     after1Hour: number;
+     *     after6Hour: number;
+     *     after12Hour: number;
+     *     after24Hour: number;
+     * }}
+     */
     precipitation: {
-        now: number
-        after10Minutes: number
-        after1Hour: number
-        after6Hour: number
-        after12Hour: number
-        after24Hour: number
-    }
+        now: number;
+        after10Minutes: number;
+        after1Hour: number;
+        after6Hour: number;
+        after12Hour: number;
+        after24Hour: number;
+    };
+
+    /**
+     * Wind information, including speed and direction.
+     *
+     * @type {{
+     *     speed: number;
+     *     direction: number;
+     * }}
+     */
     wind: {
-        speed: number
-        direction: number
-    }
+        speed: number;
+        direction: number;
+    };
 }
 
+/**
+ * Represents detailed information about a weather center, including its location and identifiers.
+ *
+ * @interface
+ */
 export interface CastedCenterInfo {
-    provinceID: number
-    name: string
-    province: string
-    lat: number
-    long: number
-    altitude: number
-    centerID: number
-    hourlyID: number
+    /**
+     * The unique identifier of the province where the weather center is located.
+     *
+     * @type {number}
+     */
+    provinceID: number;
+
+    /**
+     * The name of the weather center.
+     *
+     * @type {string}
+     */
+    name: string;
+
+    /**
+     * The name of the province where the weather center is located.
+     *
+     * @type {string}
+     */
+    province: string;
+
+    /**
+     * The latitude coordinate of the weather center's location.
+     *
+     * @type {number}
+     */
+    lat: number;
+
+    /**
+     * The longitude coordinate of the weather center's location.
+     *
+     * @type {number}
+     */
+    long: number;
+
+    /**
+     * The altitude (elevation) of the weather center's location.
+     *
+     * @type {number}
+     */
+    altitude: number;
+
+    /**
+     * The unique identifier of the weather center.
+     *
+     * @type {number}
+     */
+    centerID: number;
+
+    /**
+     * The unique identifier for hourly forecasts associated with the weather center.
+     *
+     * @type {number}
+     */
+    hourlyID: number;
 }
 
+
+/**
+ * Represents information about a district within a province, including its name and identifier.
+ *
+ * @interface
+ */
 export interface District {
-    name: string
-    centerID: number
+    /**
+     * The name of the district.
+     *
+     * @type {string}
+     */
+    name: string;
+
+    /**
+     * The unique identifier of the district.
+     *
+     * @type {number}
+     */
+    centerID: number;
 }
 
 export type CastedDailyForecasts = CastedDailyForecast[];
