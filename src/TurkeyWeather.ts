@@ -3,7 +3,7 @@ import crypto from "crypto";
 import https from "https";
 
 import { convertCityInfo, convertDailyResponse, convertHourlyResponse, convertLatestEventsResponse, convertTurkishCharacters } from './converters'
-import { CastedDailyForecast, CastedDailyForecasts, CastedHourlyForecasts, CastedLatestEvents, CenterResponse, DailyWeatherResponse, District, HourlyWeatherResponse, LatestEventsResponse } from "./types";
+import { CastedDailyForecast, CastedHourlyForecast, CastedLatestEvents, CenterResponse, DailyWeatherResponse, District, HourlyWeatherResponse, LatestEventsResponse } from "./types";
 import { CastedCenterInfo } from "./types";
 
 
@@ -232,7 +232,7 @@ export class TurkeyWeather {
      * @async
      * @param {(string | number)} centerInput Province name or center ID to fetch the forecast for.
      * @param {string} [districtName=''] If provided, fetches the district-specific forecast for the center.
-     * @returns {Promise<CastedDailyForecasts>} A Promise that resolves to an array of daily weather forecasts.
+     * @returns {Promise<CastedDailyForecast[]>} A Promise that resolves to an array of daily weather forecasts.
      *
      * @throws {Error} Throws an error if the specified center is not found in the system.
      *
@@ -241,7 +241,7 @@ export class TurkeyWeather {
      * const forecast = await DailyForcast("Trabzon");
      * console.log(forecast);
      */
-    async DailyForcast(centerInput: string | number, districtName: string = ''): Promise<CastedDailyForecasts> {
+    async DailyForcast(centerInput: string | number, districtName: string = ''): Promise<CastedDailyForecast[]> {
         // Get center ID if the parameters are a province name or a district name.
         if (typeof centerInput !== 'number') {
             centerInput = await this.getCenterIDfromName(centerInput, districtName);
@@ -268,7 +268,7 @@ export class TurkeyWeather {
      * @async
      * @param {(string | number)} centerInput Province name or center ID to fetch the forecast for.
      * @param {string} [districtName=''] If provided, fetches the district-specific forecast for the center.
-     * @returns {Promise<CastedHourlyForecasts>} A Promise that resolves to an array of hourly weather forecasts.
+     * @returns {Promise<CastedHourlyForecast[]>} A Promise that resolves to an array of hourly weather forecasts.
      *
      * @throws {Error} Throws an error if the specified center is not found in the system.
      *
@@ -277,7 +277,7 @@ export class TurkeyWeather {
      * const forecast = await HourlyForecast("Trabzon");
      * console.log(forecast);
      */
-    async HourlyForecast(centerInput: string | number, districtName: string = ''): Promise<CastedHourlyForecasts> {
+    async HourlyForecast(centerInput: string | number, districtName: string = ''): Promise<CastedHourlyForecast[]> {
         //Get center ID if the parameters are a province name or a district name.
         if (typeof centerInput !== 'number') {
             centerInput = await this.getCenterIDfromName(centerInput, districtName);

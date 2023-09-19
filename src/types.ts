@@ -378,6 +378,3 @@ export interface District {
      */
     centerID: number;
 }
-
-export type CastedDailyForecasts = CastedDailyForecast[];
-export type CastedHourlyForecasts = CastedHourlyForecast[];

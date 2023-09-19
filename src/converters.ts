@@ -1,4 +1,4 @@
-import { CastedCenterInfo, CenterResponse, DailyWeatherResponse, CastedDailyForecasts, LatestEventsResponse, CastedLatestEvents, CastedHourlyForecasts, HourlyWeatherResponse } from "./types";
+import { CastedCenterInfo, CenterResponse, DailyWeatherResponse, CastedDailyForecast, LatestEventsResponse, CastedLatestEvents, CastedHourlyForecast, HourlyWeatherResponse } from "./types";
 
 export function convertTurkishCharacters(inputString: string): string {
     inputString = inputString.toLowerCase();
@@ -37,9 +37,9 @@ export function convertCityInfo(res: CenterResponse): CastedCenterInfo {
     return castedData
 }
 
-export function convertDailyResponse(res: DailyWeatherResponse): CastedDailyForecasts {
+export function convertDailyResponse(res: DailyWeatherResponse): CastedDailyForecast[] {
     // Map the response data to the desired structure
-    const castedData: CastedDailyForecasts =
+    const castedData: CastedDailyForecast[] =
         [
             {
                 date: res.tarihGun1,
@@ -126,9 +126,9 @@ export function convertDailyResponse(res: DailyWeatherResponse): CastedDailyFore
     return castedData
 }
 
-export function convertHourlyResponse(res: HourlyWeatherResponse): CastedHourlyForecasts {
+export function convertHourlyResponse(res: HourlyWeatherResponse): CastedHourlyForecast[] {
     // Map the response data to the desired structure
-    const castedData: CastedHourlyForecasts = res.tahmin.map(forecast => {
+    const castedData: CastedHourlyForecast[] = res.tahmin.map(forecast => {
         return {
             date: forecast.tarih,
             temp: forecast.sicaklik,
