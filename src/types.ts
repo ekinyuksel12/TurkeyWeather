@@ -168,5 +168,10 @@ export interface CastedCenterInfo {
     hourlyID: number
 }
 
+export interface District {
+    name: string
+    centerID: number
+}
+
 export type CastedDailyForecasts = CastedDailyForecast[];
 export type CastedHourlyForecasts = CastedHourlyForecast[];
