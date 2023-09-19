@@ -41,7 +41,7 @@ api.getProvinceNames()
 
 This function will return all of the province names in Turkey as an array of strings.
 
-```json
+```
 [
   'Adana',
   'Adıyaman',
@@ -58,7 +58,7 @@ api.getCenterInfo("Trabzon","Ortahisar"); //You can pass the name of the center
 
 This function will return the general information about a center like (name, altitude, lat, long, centerID). This function is to be used for getting the centerID of a center using its name. But there is a internal converter for all functions.
 
-```json
+```
 {
   provinceID: 60,
   name: 'Ortahisar',
@@ -78,7 +78,7 @@ api.getDistricts("Niğde"); //Functions also have internal character conversion.
 
 This Function will return you an array of district objects which contains the district name and its centerID. You cannot use centerID with this function because provinces are too vague to be a weather center.
 
-```json
+```
 [
   { name: 'Altunhisar', centerID: 95103 },
   { name: 'Bor', centerID: 95105 },
@@ -102,7 +102,7 @@ api.LatestEvents("Trabzon", "Ortahisar")
 
 This function will return the latest events in a given weather center. Latest events are like wind speed and direction, current temperature, current humidity and more.
 
-```json
+```
 {
   temp: 24.7,
   dataDate: '2023-09-19T11:01:00.000Z',
@@ -129,7 +129,7 @@ api.DailyForecast("Trabzon", "Ortahisar")
 
 This function will return 5 day of weather forecast from today of a given weather center in an array of daily forecast objects.
 
-```json
+```
 [
   {
     date: '2023-09-20T00:00:00.000Z',
@@ -158,7 +158,7 @@ api.HourlyForecast("Trabzon", "Ortahisar")
 
 This function will return hourly weather forecasts of a given weather center in an array of hourly forecast objects. The forecasts are in 3 hour intervals.
 
-```json
+```
 [
   {
     date: '2023-09-19T12:00:00.000Z',
