@@ -1,6 +1,6 @@
 import axios, { AxiosInstance } from "axios";
-import crypto from "crypto";
-import https from "https";
+import {constants} from "crypto";
+import {Agent} from "https";
 
 import { convertCityInfo, convertDailyResponse, convertHourlyResponse, convertLatestEventsResponse, convertTurkishCharacters } from './converters'
 import { CastedDailyForecast, CastedHourlyForecast, CastedLatestEvents, CenterResponse, DailyWeatherResponse, District, HourlyWeatherResponse, LatestEventsResponse } from "./types";
@@ -35,8 +35,8 @@ export class TurkeyWeather {
                 Origin: 'https://www.mgm.gov.tr',
                 Host: 'servis.mgm.gov.tr'
             },
-            httpsAgent: new https.Agent({
-                secureOptions: crypto.constants.SSL_OP_LEGACY_SERVER_CONNECT
+            httpsAgent: new Agent({
+                secureOptions: constants.SSL_OP_LEGACY_SERVER_CONNECT
             })
         })
     }
@@ -294,3 +294,9 @@ export class TurkeyWeather {
         return castedData;
     }
 }
+
+export const turkeyWeather = {
+    TurkeyWeather: TurkeyWeather
+}
+
+export default turkeyWeather;
