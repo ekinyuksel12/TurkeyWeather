@@ -1,5 +1,5 @@
 {
-  "name": "TurkeyWeather",
+  "name": "turkey-weather",
   "version": "1.0.0",
   "description": "The 'TurkeyWeather' npm module is a tool for accessing real-time weather data and weather forecast from the Turkish State Meteorological Service (MGM) website.",
   "main": "./src/TurkeyWeather.ts",
