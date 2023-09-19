@@ -1,14 +1,14 @@
 {
-  "name": "mgm-api",
+  "name": "TurkeyWeather",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "The 'TurkeyWeather' npm module is a tool for accessing real-time weather data and weather forecast from the Turkish State Meteorological Service (MGM) website.",
+  "main": "./src/TurkeyWeather.ts",
   "scripts": {
     "test": "jest --verbose",
     "start": "npx ts-node ./src/main.ts"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Toprak Ekin Yüksel",
+  "license": "MIT",
   "dependencies": {
     "@types/node": "^20.6.2",
     "axios": "^1.5.0",
