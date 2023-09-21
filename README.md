@@ -73,7 +73,7 @@ api.getCenterInfo('istanbul', 'ataşehir');
 
 ### Get all the districts of a province
 ```javascript
-api.getDistricts("Niğde"); //Functions also have internal character conversion.
+api.getDistricts('Niğde'); //Functions also have internal character conversion.
 ```
 
 This function will return an array of district objects which contains the district name and its `centerID`.
