@@ -6,6 +6,7 @@ The [TurkeyWeather](https://www.npmjs.com/package/turkey-weather) npm module is 
 
 Example Usage:
 ```js
+import { TurkeyWeather } from 'turkey-weather';
 const api = new TurkeyWeather();
 
 const province = 'Trabzon';
