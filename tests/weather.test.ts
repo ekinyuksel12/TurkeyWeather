@@ -10,17 +10,17 @@ test('getProvinceNames()', async () => {
 })
 
 test('getDistricts()',async () => {
-    const districs = await api.getDistricts("Niğde");
+    const districts = await api.getDistricts("Niğde");
 })
 
 test('getCenterInfo()',async () => {
     const province = await api.getCenterInfo("Trabzon");
     expect(province.provinceID).toBe(60);
 
-    const distric = await api.getCenterInfo("Trabzon", "Ortahisar");
-    expect(distric.provinceID).toBe(60);
-    expect(distric.province).toBe("Trabzon");
-    expect(distric.name).toBe("Ortahisar");
+    const district = await api.getCenterInfo("Trabzon", "Ortahisar");
+    expect(district.provinceID).toBe(60);
+    expect(district.province).toBe("Trabzon");
+    expect(district.name).toBe("Ortahisar");
 })
 
 test('LatestEvents()',async () => {
