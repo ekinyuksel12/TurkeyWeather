@@ -56,7 +56,7 @@ api.getCenterInfo(96101); //You can pass centerID
 api.getCenterInfo('Trabzon', 'Ortahisar'); //You can pass the name of the center
 ```
 
-This function will return the general information about a center like (name, altitude, lat, long, centerID). This function is to be used for getting the centerID of a center using its name. But there is a internal converter for all functions.
+This function will return the general information about a center such as the name, province, geographical coordinates, and identifiers. This function is to be used for getting the centerID of a center using its name. But there is a internal converter for all functions.
 
 ```js
 {
