@@ -108,7 +108,7 @@ export class TurkeyWeather {
             centerInput = convertTurkishCharacters(centerInput);
             urlPath = 'merkezler?il=' + centerInput;
 
-            // If there is a distric name given, add it to the URL path.
+            // If there is a district name given, add it to the URL path.
             if (districtName !== '') {
                 districtName = convertTurkishCharacters(districtName);
                 urlPath = urlPath + '&ilce=' + districtName;
