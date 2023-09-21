@@ -6,8 +6,13 @@ The [TurkeyWeather](https://www.npmjs.com/package/turkey-weather) npm module is 
 ```js
 const api = new TurkeyWeather();
 
-api.LatestEvents('Trabzon', 'Ortahisar').then(res => {
-    console.log(res.temp);
+const province = 'Trabzon';
+const district = 'Ortahisar';
+
+api.LatestEvents(province, district).then(res => {
+  const { temp } = res;
+  
+  console.log(`The current temperature in ${district}, ${province} is ${temp}°C`);
 });
 ```
 
