@@ -76,7 +76,8 @@ This function will return the general information about a center like (name, alt
 api.getDistricts("Niğde"); //Functions also have internal character conversion.
 ```
 
-This Function will return you an array of district objects which contains the district name and its centerID. You cannot use centerID with this function because provinces are too vague to be a weather center.
+This function will return an array of district objects which contains the district name and its `centerID`.
+You cannot use `centerID` with this function because provinces are too vague to be a weather center.
 
 ```js
 [
