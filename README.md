@@ -106,7 +106,7 @@ api.LatestEvents(96101);
 api.LatestEvents('Trabzon', 'Ortahisar');
 ```
 
-This function will return the latest events in a given weather center. Latest events are like wind speed and direction, current temperature, current humidity and more.
+This function will return the latest events for a given weather center. Latest events are like wind speed and direction, current temperature, current humidity and more.
 
 ```js
 {
