@@ -53,7 +53,7 @@ This function will return all of the province names in Turkey as an array of str
 ### Get general information about a center
 ```js
 api.getCenterInfo(96101); //You can pass centerID
-api.getCenterInfo("Trabzon","Ortahisar"); //You can pass the name of the center
+api.getCenterInfo('Trabzon', 'Ortahisar'); //You can pass the name of the center
 ```
 
 This function will return the general information about a center like (name, altitude, lat, long, centerID). This function is to be used for getting the centerID of a center using its name. But there is a internal converter for all functions.
@@ -100,7 +100,7 @@ There are 3 functions that can give you weather forecasts:
 ### LatestEvents()
 ```js
 api.LatestEvents(96101)
-api.LatestEvents("Trabzon", "Ortahisar")
+api.LatestEvents('Trabzon', 'Ortahisar')
 ```
 
 This function will return the latest events in a given weather center. Latest events are like wind speed and direction, current temperature, current humidity and more.
