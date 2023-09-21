@@ -17,17 +17,10 @@ Pull requests are welcome. For major changes, please open an issue first
 to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
-
-
 ## License
 The 'TurkeyWeather' module is released under the [MIT License](https://choosealicense.com/licenses/mit/).
 
-
 # Documentation
-### CenterID system
-The MGM API uses ids for weather centers around the Turkey. This ids are a 5 digit code that are used for making API calls. For example the code `93432` is for the Ataşehir district of İstanbul.
-
-You can use these codes in the functions to get data. But you don't have to because every function that can work with CenterID system has a built in location name to CenterID converter. For Ataşehir, just passing the parameter `('istanbul', 'ataşehir')` to the function should be fine.
 
 ### Create an API object
 ```js
@@ -52,11 +45,10 @@ This function will return all of the province names in Turkey as an array of str
 
 ### Get general information about a center
 ```js
-api.getCenterInfo(96101); //You can pass centerID
-api.getCenterInfo('Trabzon', 'Ortahisar'); //You can pass the name of the center
+api.getCenterInfo(96101);
 ```
 
-This function will return the general information about a center such as the name, province, geographical coordinates, and identifiers. This function is to be used for getting the centerID of a center using its name. But there is a internal converter for all functions.
+This function will return the general information about a center such as the name, province, geographical coordinates, and identifiers.
 
 ```js
 {
@@ -69,6 +61,14 @@ This function will return the general information about a center such as the nam
   centerID: 96101,
   hourlyID: 17038
 }
+```
+
+The MGM API uses IDs known as `centerID`'s to differentiate between weather centers within Turkey. `centerID`'s are 5-digit codes that are used for identifying individual weather centers within API requests. For example, `93432` is the `centerID` for the Ataşehir district of İstanbul.
+
+While you can use the `centerID` of a weather center to retrieve data for that center, you can also provide the province and district where the center is located to retrieve the `centerID` for that center. For example if you wanted to retrieve the weather center that is located in the Ataşehir district of İstanbul, you can do so by passing the province and district as parameters:
+
+```js
+api.getCenterInfo('istanbul', 'ataşehir')
 ```
 
 ### Get all the districts of a province
