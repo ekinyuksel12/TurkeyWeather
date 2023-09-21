@@ -17,7 +17,7 @@ yarn add turkey-weather
 
 # Documentation
 
-## Example Usage
+### Example Usage
 ```js
 import { TurkeyWeather } from 'turkey-weather';
 const api = new TurkeyWeather();
