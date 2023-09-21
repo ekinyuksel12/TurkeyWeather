@@ -25,11 +25,9 @@ const api = new TurkeyWeather();
 const province = 'Trabzon';
 const district = 'Ortahisar';
 
-api.LatestEvents(province, district).then(res => {
-  const { temp } = res;
-  
-  console.log(`The current temperature in ${district}, ${province} is ${temp}°C`);
-});
+const { temp } = await api.LatestEvents(province, district);
+
+console.log(`The current temperature in ${district}, ${province} is ${temp}°C`);
 ```
 
 ### Create an API object
