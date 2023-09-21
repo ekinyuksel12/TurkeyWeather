@@ -157,7 +157,7 @@ This function will return the past 5 days of weather forecasts from a given weat
 
 ```js
 api.HourlyForecast(96101);
-api.HourlyForecast("Trabzon", "Ortahisar");
+api.HourlyForecast('Trabzon', 'Ortahisar');
 ```
 
 This function will return hourly weather forecasts of a given weather center in an array of hourly forecast objects. The forecasts are in 3 hour intervals.
