@@ -92,7 +92,10 @@ This Function will return you an array of district objects which contains the di
 ---
 ### Weather Forecasts
 
-There are 3 functions that can give you weather forecasts. '**LatestEvents()**', '**DailyForecast()**' and '**HourlyForecast()**'.
+There are 3 functions that can give you weather forecasts:
+- [`LatestEvents()`](#latestevents)
+- [`DailyForecast()`](#dailyforecast)
+- [`HourlyForecast()`](#hourlyforecast)
 
 ### LatestEvents()
 ```js
