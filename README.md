@@ -71,9 +71,11 @@ While you can use the `centerID` of a weather center to retrieve data for that c
 api.getCenterInfo('istanbul', 'ataşehir');
 ```
 
+> **note:** turkish characters will automatically be converted to their english equivalents for matching purposes
+
 ### Get all the districts of a province
 ```javascript
-api.getDistricts('Niğde'); //Functions also have internal character conversion.
+api.getDistricts('Niğde');
 ```
 
 This function will return an array of district objects which contains the district name and its `centerID`.
