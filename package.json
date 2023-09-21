@@ -1,6 +1,6 @@
 {
   "name": "turkey-weather",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Toprak Ekin Yüksel",
   "license": "MIT",
   "description": "The 'TurkeyWeather' npm module is a tool for accessing real-time weather data and weather forecast from the Turkish State Meteorological Service (MGM) website.",
