@@ -16,6 +16,8 @@ yarn add turkey-weather
 ```
 
 # Documentation
+
+## Example Usage
 ```js
 import { TurkeyWeather } from 'turkey-weather';
 const api = new TurkeyWeather();
@@ -29,8 +31,6 @@ api.LatestEvents(province, district).then(res => {
   console.log(`The current temperature in ${district}, ${province} is ${temp}°C`);
 });
 ```
-
-# Documentation
 
 ### Create an API object
 ```js
