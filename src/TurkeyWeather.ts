@@ -108,7 +108,7 @@ export class TurkeyWeather {
             centerInput = convertTurkishCharacters(centerInput);
             urlPath = 'merkezler?il=' + centerInput;
 
-            // If there is a distric name given, add it to the URL path.
+            // If there is a district name given, add it to the URL path.
             if (districtName !== '') {
                 districtName = convertTurkishCharacters(districtName);
                 urlPath = urlPath + '&ilce=' + districtName;
@@ -238,10 +238,10 @@ export class TurkeyWeather {
      *
      * @example
      * // Fetch the daily weather forecast for Trabzon
-     * const forecast = await DailyForcast("Trabzon");
+     * const forecast = await DailyForecast("Trabzon");
      * console.log(forecast);
      */
-    async DailyForcast(centerInput: string | number, districtName: string = ''): Promise<CastedDailyForecast[]> {
+    async DailyForecast(centerInput: string | number, districtName: string = ''): Promise<CastedDailyForecast[]> {
         // Get center ID if the parameters are a province name or a district name.
         if (typeof centerInput !== 'number') {
             centerInput = await this.getCenterIDfromName(centerInput, districtName);
