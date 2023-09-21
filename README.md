@@ -41,7 +41,7 @@ This function will return all of the province names in Turkey as an array of str
 ]
 ```
 
-### Get general information about a center
+### Get general information about a center by its `centerID`
 ```js
 api.getCenterInfo(96101);
 ```
