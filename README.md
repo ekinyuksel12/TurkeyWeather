@@ -25,9 +25,9 @@ The 'TurkeyWeather' module is released under the [MIT License](https://chooseali
 
 # Documentation
 ### CenterID system
-The MGM API uses ids for weather centers around the Turkey. This ids are a 5 digit code that are used for making API calls. For example the code ```93432``` is for the Ataşehir district of İstanbul.
+The MGM API uses ids for weather centers around the Turkey. This ids are a 5 digit code that are used for making API calls. For example the code `93432` is for the Ataşehir district of İstanbul.
 
-You can use these codes in the functions to get data. But you don't have to because every function that can work with CenterID system has a built in location name to CenterID converter. For Ataşehir, just passing the parameter ```('istanbul', 'ataşehir')``` to the function should be fine.
+You can use these codes in the functions to get data. But you don't have to because every function that can work with CenterID system has a built in location name to CenterID converter. For Ataşehir, just passing the parameter `('istanbul', 'ataşehir')` to the function should be fine.
 
 ### Create an API object
 ```js
