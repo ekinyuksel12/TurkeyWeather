@@ -1,48 +1,51 @@
 {
-  "name": "turkey-weather",
-  "version": "1.0.0",
-  "author": "Toprak Ekin Yüksel",
-  "license": "MIT",
-  "description": "The 'TurkeyWeather' npm module is a tool for accessing real-time weather data and weather forecast from the Turkish State Meteorological Service (MGM) website.",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ekinyuksel12/TurkeyWeather.git"
-  },
-  "keywords": ["weather", "forecast", "Turkey", "meteorology", "API", "interface"],
-  "homepage": "https://github.com/ekinyuksel12/TurkeyWeather#readme",
-  "bugs": {
-    "url": "https://github.com/ekinyuksel12/TurkeyWeather/issues"
-  },
-  
-  "peerDependencies": {
-    "axios": "^1.5.0"
-  },  
-
-  "main": "./dist/TurkeyWeather.js",
-  "types": "./dist/TurkeyWeather.d.ts",
-
-  "files": [
-    "src/",
-    "dist/",
-    "package.json",
-    "README.md",
-    "tsconfig.json"
-  ],
-
-  "scripts": {
-    "build": "tsc",
-    "test": "jest --verbose",
-    "start": "npx ts-node ./src/main.ts"
-  },
-  "dependencies": {
-    "@types/axios": "^0.14.0",
-    "@types/node": "^20.6.2",
-    "axios": "^1.5.0",
-    "typescript": "^5.2.2"
-  },
-  "devDependencies": {
-    "@types/jest": "^29.5.5",
-    "jest": "^29.7.0",
-    "ts-jest": "^29.1.1"
-  }
+    "name": "turkey-weather",
+    "version": "1.1.0",
+    "author": "Toprak Ekin Yüksel",
+    "license": "MIT",
+    "description": "The 'TurkeyWeather' npm module is a tool for accessing real-time weather data and weather forecast from the Turkish State Meteorological Service (MGM) website.",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ekinyuksel12/TurkeyWeather.git"
+    },
+    "keywords": [
+        "weather",
+        "forecast",
+        "Turkey",
+        "meteorology",
+        "API",
+        "interface"
+    ],
+    "homepage": "https://github.com/ekinyuksel12/TurkeyWeather#readme",
+    "bugs": {
+        "url": "https://github.com/ekinyuksel12/TurkeyWeather/issues"
+    },
+    "peerDependencies": {
+        "axios": "^1.5.0"
+    },
+    "main": "./dist/TurkeyWeather.js",
+    "types": "./dist/TurkeyWeather.d.ts",
+    "files": [
+        "src/",
+        "dist/",
+        "package.json",
+        "README.md",
+        "tsconfig.json"
+    ],
+    "scripts": {
+        "build": "tsc",
+        "test": "jest --verbose",
+        "start": "npx ts-node ./src/main.ts"
+    },
+    "dependencies": {
+        "@types/axios": "^0.14.0",
+        "@types/node": "^20.6.2",
+        "axios": "^1.5.0",
+        "typescript": "^5.2.2"
+    },
+    "devDependencies": {
+        "@types/jest": "^29.5.5",
+        "jest": "^29.7.0",
+        "ts-jest": "^29.1.1"
+    }
 }
