@@ -1,47 +1,48 @@
 
 # TurkeyWeather
 
-The 'TurkeyWeather' npm module is a tool for accessing real-time weather data and weather forecast from the Turkish State Meteorological Service (MGM) website. With this module, you can effortlessly retrieve a wide range of weather information, including current conditions, daily and hourly forecasts, and the latest weather events, for any province or district in Turkey.
+The [TurkeyWeather](https://www.npmjs.com/package/turkey-weather) npm module is a tool for accessing real-time weather data and weather forecast from the [Turkish State Meteorological Service (MGM) website](https://www.mgm.gov.tr/). With this module, you can effortlessly retrieve a wide range of weather information, including current conditions, daily and hourly forecasts, and the latest weather events, for any province or district in Turkey.
 
-```javascript
-const api = new TurkeyWeather();
+## Installation
 
-api.LatestEvents('Trabzon', 'Ortahisar').then(res => {
-    console.log(res.temp);
-});
+Using `npm`:
+```bash
+npm install turkey-weather
 ```
 
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-
-## License
-The 'TurkeyWeather' module is released under the [MIT License](https://choosealicense.com/licenses/mit/).
-
+Using `yarn`:
+```bash
+yarn add turkey-weather
+```
 
 # Documentation
-### CenterID system
-The MGM API uses ids for weather centers around the Turkey. This ids are a 5 digit code that are used for making API calls. For example the code ```93432``` is for the Ataşehir district of İstanbul.
 
-You can use these codes in the functions to get data. But you don't have to because every function that can work with CenterID system has a built in location name to CenterID converter. For Ataşehir, just passing the parameter ```('istanbul', 'ataşehir')``` to the function should be fine.
+### Example Usage
+```js
+import { TurkeyWeather } from 'turkey-weather';
+const api = new TurkeyWeather();
+
+const province = 'Trabzon';
+const district = 'Ortahisar';
+
+const { temp } = await api.LatestEvents(province, district);
+
+console.log(`The current temperature in ${district}, ${province} is ${temp}°C`);
+```
 
 ### Create an API object
-```javascript
+```js
 const api = new TurkeyWeather();
 ```
 
 ### Get the names of all provinces
-```javascript
-api.getProvinceNames()
+```js
+api.getProvinceNames();
 ```
 
 This function will return all of the province names in Turkey as an array of strings.
 
-```
+```js
 [
   'Adana',
   'Adıyaman',
@@ -50,15 +51,14 @@ This function will return all of the province names in Turkey as an array of str
 ]
 ```
 
-### Get general information about a center
-```javascript
-api.getCenterInfo(96101); //You can pass centerID
-api.getCenterInfo("Trabzon","Ortahisar"); //You can pass the name of the center
+### Get general information about a center by its `centerID`
+```js
+api.getCenterInfo(96101);
 ```
 
-This function will return the general information about a center like (name, altitude, lat, long, centerID). This function is to be used for getting the centerID of a center using its name. But there is a internal converter for all functions.
+This function will return the general information about a center such as the name, province, geographical coordinates, and identifiers.
 
-```
+```js
 {
   provinceID: 60,
   name: 'Ortahisar',
@@ -71,14 +71,39 @@ This function will return the general information about a center like (name, alt
 }
 ```
 
+The MGM API uses IDs known as `centerID`'s to differentiate between weather centers within Turkey. `centerID`'s are 5-digit codes that are used for identifying individual weather centers within API requests. For example, `93432` is the `centerID` for the Ataşehir district of İstanbul.
+
+### Get general information about a center by its province and district
+
+While you can use the `centerID` of a weather center to retrieve data for that center, you can also provide the province and district where the center is located to retrieve the `centerID` for that center. For example if you wanted to retrieve the weather center that is located in the Ataşehir district of İstanbul, you can do so by passing the province and district as parameters:
+
+```js
+api.getCenterInfo('istanbul', 'ataşehir');
+```
+
+```js
+{
+  name: 'Ataşehir',
+  province: 'İstanbul',
+  lat: 41.0294,
+  long: 29.1383,
+  altitude: 0,
+  centerID: 93432,
+  hourlyID: 17064
+}
+```
+
+> **note:** turkish characters will automatically be converted to their english equivalents for matching purposes
+
 ### Get all the districts of a province
 ```javascript
-api.getDistricts("Niğde"); //Functions also have internal character conversion.
+api.getDistricts('Niğde');
 ```
 
-This Function will return you an array of district objects which contains the district name and its centerID. You cannot use centerID with this function because provinces are too vague to be a weather center.
+This function will return an array of district objects which contains the district name and its `centerID`.
+You cannot use `centerID` with this function because provinces are too vague to be a weather center.
 
-```
+```js
 [
   { name: 'Altunhisar', centerID: 95103 },
   { name: 'Bor', centerID: 95105 },
@@ -92,17 +117,20 @@ This Function will return you an array of district objects which contains the di
 ---
 ### Weather Forecasts
 
-There are 3 functions that can give you weather forecasts. '**LatestEvents()**', '**DailyForecast()**' and '**HourlyForecat()**'.
+There are 3 functions that can give you weather forecasts:
+- [`LatestEvents()`](#latestevents)
+- [`DailyForecast()`](#dailyforecast)
+- [`HourlyForecast()`](#hourlyforecast)
 
-### LatestEvents()
-```javascript
-api.LatestEvents(96101)
-api.LatestEvents("Trabzon", "Ortahisar")
+### `LatestEvents()`
+```js
+api.LatestEvents(96101);
+api.LatestEvents('Trabzon', 'Ortahisar');
 ```
 
-This function will return the latest events in a given weather center. Latest events are like wind speed and direction, current temperature, current humidity and more.
+This function will return the latest events for a given weather center. Latest events are like wind speed and direction, current temperature, current humidity and more.
 
-```
+```js
 {
   temp: 24.7,
   dataDate: '2023-09-19T11:01:00.000Z',
@@ -121,15 +149,15 @@ This function will return the latest events in a given weather center. Latest ev
 }
 ```
 
-### DailyForecast()
-```javascript
-api.DailyForecast(96101)
-api.DailyForecast("Trabzon", "Ortahisar")
+### `DailyForecast()`
+```js
+api.DailyForecast(96101);
+api.DailyForecast('Trabzon', 'Ortahisar');
 ```
 
-This function will return 5 day of weather forecast from today of a given weather center in an array of daily forecast objects.
+This function will return the past 5 days of weather forecasts from a given weather center as an array of daily forecast objects.
 
-```
+```js
 [
   {
     date: '2023-09-20T00:00:00.000Z',
@@ -149,16 +177,16 @@ This function will return 5 day of weather forecast from today of a given weathe
 ]
 ```
 
-### HourlyForecast()
+### `HourlyForecast()`
 
-```javascript
-api.HourlyForecast(96101)
-api.HourlyForecast("Trabzon", "Ortahisar")
+```js
+api.HourlyForecast(96101);
+api.HourlyForecast('Trabzon', 'Ortahisar');
 ```
 
 This function will return hourly weather forecasts of a given weather center in an array of hourly forecast objects. The forecasts are in 3 hour intervals.
 
-```
+```js
 [
   {
     date: '2023-09-19T12:00:00.000Z',
@@ -179,3 +207,11 @@ This function will return hourly weather forecasts of a given weather center in 
   ...
 ]
 ```
+
+# Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+## License
+The [TurkeyWeather](https://github.com/ekinyuksel12/TurkeyWeather) module is released under the [MIT License](https://choosealicense.com/licenses/mit/).
