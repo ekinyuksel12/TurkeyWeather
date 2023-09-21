@@ -29,7 +29,7 @@ const api = new TurkeyWeather();
 
 ### Get the names of all provinces
 ```js
-api.getProvinceNames()
+api.getProvinceNames();
 ```
 
 This function will return all of the province names in Turkey as an array of strings.
@@ -68,7 +68,7 @@ The MGM API uses IDs known as `centerID`'s to differentiate between weather cent
 While you can use the `centerID` of a weather center to retrieve data for that center, you can also provide the province and district where the center is located to retrieve the `centerID` for that center. For example if you wanted to retrieve the weather center that is located in the Ataşehir district of İstanbul, you can do so by passing the province and district as parameters:
 
 ```js
-api.getCenterInfo('istanbul', 'ataşehir')
+api.getCenterInfo('istanbul', 'ataşehir');
 ```
 
 ### Get all the districts of a province
@@ -100,8 +100,8 @@ There are 3 functions that can give you weather forecasts:
 
 ### LatestEvents()
 ```js
-api.LatestEvents(96101)
-api.LatestEvents('Trabzon', 'Ortahisar')
+api.LatestEvents(96101);
+api.LatestEvents('Trabzon', 'Ortahisar');
 ```
 
 This function will return the latest events in a given weather center. Latest events are like wind speed and direction, current temperature, current humidity and more.
@@ -127,8 +127,8 @@ This function will return the latest events in a given weather center. Latest ev
 
 ### DailyForecast()
 ```js
-api.DailyForecast(96101)
-api.DailyForecast('Trabzon', 'Ortahisar')
+api.DailyForecast(96101);
+api.DailyForecast('Trabzon', 'Ortahisar');
 ```
 
 This function will return the past 5 days of weather forecasts from a given weather center as an array of daily forecast objects.
@@ -156,8 +156,8 @@ This function will return the past 5 days of weather forecasts from a given weat
 ### HourlyForecast()
 
 ```js
-api.HourlyForecast(96101)
-api.HourlyForecast("Trabzon", "Ortahisar")
+api.HourlyForecast(96101);
+api.HourlyForecast("Trabzon", "Ortahisar");
 ```
 
 This function will return hourly weather forecasts of a given weather center in an array of hourly forecast objects. The forecasts are in 3 hour intervals.
