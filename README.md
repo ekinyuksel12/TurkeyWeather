@@ -1,7 +1,7 @@
 
 # TurkeyWeather
 
-The 'TurkeyWeather' npm module is a tool for accessing real-time weather data and weather forecast from the Turkish State Meteorological Service (MGM) website. With this module, you can effortlessly retrieve a wide range of weather information, including current conditions, daily and hourly forecasts, and the latest weather events, for any province or district in Turkey.
+The [TurkeyWeather](https://www.npmjs.com/package/turkey-weather) npm module is a tool for accessing real-time weather data and weather forecast from the [Turkish State Meteorological Service (MGM) website](https://www.mgm.gov.tr/). With this module, you can effortlessly retrieve a wide range of weather information, including current conditions, daily and hourly forecasts, and the latest weather events, for any province or district in Turkey.
 
 ```js
 const api = new TurkeyWeather();
@@ -18,7 +18,7 @@ to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
 ## License
-The 'TurkeyWeather' module is released under the [MIT License](https://choosealicense.com/licenses/mit/).
+The [TurkeyWeather](https://github.com/ekinyuksel12/TurkeyWeather) module is released under the [MIT License](https://choosealicense.com/licenses/mit/).
 
 # Documentation
 
