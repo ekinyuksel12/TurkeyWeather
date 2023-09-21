@@ -100,7 +100,7 @@ There are 3 functions that can give you weather forecasts:
 - [`DailyForecast()`](#dailyforecast)
 - [`HourlyForecast()`](#hourlyforecast)
 
-### LatestEvents()
+### `LatestEvents()`
 ```js
 api.LatestEvents(96101);
 api.LatestEvents('Trabzon', 'Ortahisar');
@@ -127,7 +127,7 @@ This function will return the latest events for a given weather center. Latest e
 }
 ```
 
-### DailyForecast()
+### `DailyForecast()`
 ```js
 api.DailyForecast(96101);
 api.DailyForecast('Trabzon', 'Ortahisar');
@@ -155,7 +155,7 @@ This function will return the past 5 days of weather forecasts from a given weat
 ]
 ```
 
-### HourlyForecast()
+### `HourlyForecast()`
 
 ```js
 api.HourlyForecast(96101);
