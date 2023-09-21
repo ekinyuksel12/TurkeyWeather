@@ -75,10 +75,24 @@ This function will return the general information about a center such as the nam
 
 The MGM API uses IDs known as `centerID`'s to differentiate between weather centers within Turkey. `centerID`'s are 5-digit codes that are used for identifying individual weather centers within API requests. For example, `93432` is the `centerID` for the Ataşehir district of İstanbul.
 
+### Get general information about a center by its province and district
+
 While you can use the `centerID` of a weather center to retrieve data for that center, you can also provide the province and district where the center is located to retrieve the `centerID` for that center. For example if you wanted to retrieve the weather center that is located in the Ataşehir district of İstanbul, you can do so by passing the province and district as parameters:
 
 ```js
 api.getCenterInfo('istanbul', 'ataşehir');
+```
+
+```js
+{
+  name: 'Ataşehir',
+  province: 'İstanbul',
+  lat: 41.0294,
+  long: 29.1383,
+  altitude: 0,
+  centerID: 93432,
+  hourlyID: 17064
+}
 ```
 
 > **note:** turkish characters will automatically be converted to their english equivalents for matching purposes
