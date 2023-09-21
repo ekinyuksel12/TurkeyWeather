@@ -131,7 +131,7 @@ api.DailyForecast(96101)
 api.DailyForecast("Trabzon", "Ortahisar")
 ```
 
-This function will return 5 day of weather forecast from today of a given weather center in an array of daily forecast objects.
+This function will return the past 5 days of weather forecasts from a given weather center as an array of daily forecast objects.
 
 ```js
 [
