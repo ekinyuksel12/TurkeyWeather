@@ -8,7 +8,7 @@ test('Test fot non english inputs in parameters', async () => {
         api.getDistricts("niĞdE");
         api.getCenterInfo("niĞdE");
         api.LatestEvents("niĞdE");
-        api.DailyForcast("niĞdE");
+        api.DailyForecast("niĞdE");
         api.HourlyForecast("niĞdE");
     }).not.toThrow()
 })
@@ -18,5 +18,5 @@ test('Tests for correct error responses', async () => {
     await expect(api.getCenterInfo('NonExistingCityName')).rejects.toThrow(Error)
     await expect(api.LatestEvents('NonExistingCityName')).rejects.toThrow(Error)
     await expect(api.HourlyForecast('NonExistingCityName')).rejects.toThrow(Error)
-    await expect(api.DailyForcast('NonExistingCityName')).rejects.toThrow(Error)
+    await expect(api.DailyForecast('NonExistingCityName')).rejects.toThrow(Error)
 })

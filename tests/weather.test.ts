@@ -29,7 +29,7 @@ test('LatestEvents()',async () => {
 })
 
 test('DailyForecast()',async () => {
-    const forecast = await api.DailyForcast("Trabzon", "Ortahisar");
+    const forecast = await api.DailyForecast("Trabzon", "Ortahisar");
     expect(forecast).toHaveLength(5);
     expect(forecast[0].temp).toBeDefined();
 })
