@@ -128,7 +128,7 @@ This function will return the latest events in a given weather center. Latest ev
 ### DailyForecast()
 ```js
 api.DailyForecast(96101)
-api.DailyForecast("Trabzon", "Ortahisar")
+api.DailyForecast('Trabzon', 'Ortahisar')
 ```
 
 This function will return the past 5 days of weather forecasts from a given weather center as an array of daily forecast objects.
