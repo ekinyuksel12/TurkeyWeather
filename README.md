@@ -1,7 +1,9 @@
 # TurkeyWeather
 [![npm version](https://img.shields.io/npm/v/turkey-weather.svg)](https://www.npmjs.com/package/turkey-weather)
+![License](https://img.shields.io/badge/License-GPLv3-blue.svg)
 [![npm downloads](https://img.shields.io/npm/dm/turkey-weather.svg)](https://www.npmjs.com/package/turkey-weather)
 [![GitHub issues](https://img.shields.io/github/issues/ekinyuksel12/TurkeyWeather.svg)](https://github.com/ekinyuksel12/TurkeyWeather/issues)
+
 
 The [TurkeyWeather](https://www.npmjs.com/package/turkey-weather) npm module is a tool for accessing real-time weather data and weather forecast from the [Turkish State Meteorological Service (MGM) website](https://www.mgm.gov.tr/). With this module, you can effortlessly retrieve a wide range of weather information, including current conditions, daily and hourly forecasts, and the latest weather events, for any province or district in Turkey.
 
