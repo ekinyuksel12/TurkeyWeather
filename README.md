@@ -1,7 +1,27 @@
-
 # TurkeyWeather
+[![npm version](https://img.shields.io/npm/v/turkey-weather.svg)](https://www.npmjs.com/package/turkey-weather)
+[![npm downloads](https://img.shields.io/npm/dm/turkey-weather.svg)](https://www.npmjs.com/package/turkey-weather)
+[![GitHub issues](https://img.shields.io/github/issues/ekinyuksel12/TurkeyWeather.svg)](https://github.com/ekinyuksel12/TurkeyWeather/issues)
 
 The [TurkeyWeather](https://www.npmjs.com/package/turkey-weather) npm module is a tool for accessing real-time weather data and weather forecast from the [Turkish State Meteorological Service (MGM) website](https://www.mgm.gov.tr/). With this module, you can effortlessly retrieve a wide range of weather information, including current conditions, daily and hourly forecasts, and the latest weather events, for any province or district in Turkey.
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Documentation](#documentation)
+  - [Example Usage](#example-usage)
+  - [Create an API object](#create-an-api-object)
+  - [Get the names of all provinces](#get-the-names-of-all-provinces)
+  - [Get general information about a center by its centerID](#get-general-information-about-a-center-by-its-centerid)
+  - [Get general information about a center by its province and district](#get-general-information-about-a-center-by-its-province-and-district)
+  - [Get all the districts of a province](#get-all-the-districts-of-a-province)
+  - [Weather Forecasts](#weather-forecasts)
+    - [LatestEvents()](#latestevents)
+    - [DailyForecast()](#dailyforecast)
+    - [HourlyForecast()](#hourlyforecast)
+- [Contributing](#contributing)
+- [Internationalization Note](#internationalization-note)
+- [License](#license)
 
 ## Installation
 
@@ -16,6 +36,8 @@ yarn add turkey-weather
 ```
 
 # Documentation
+
+Here is some examples on how to use TurkeyWeather module. You can access the full API reference [here.](/API_Reference.md)
 
 ### Example Usage
 ```js
@@ -213,5 +235,12 @@ This function will return hourly weather forecasts of a given weather center in 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
+## Internationalization Note
+
+All province and district name lookups are case-insensitive and Turkish characters are automatically converted to their English equivalents for matching purposes. For example, both `İstanbul` and `istanbul` will be recognized correctly. You can use either Turkish or English characters in your queries.
+
 ## License
-The [TurkeyWeather](https://github.com/ekinyuksel12/TurkeyWeather) module is released under the [MIT License](https://choosealicense.com/licenses/mit/).
+
+This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
+
+See the [LICENSE](./LICENSE) file for details.
